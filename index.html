@@ -61,7 +61,6 @@
                     transform: translateX(0);
                 }
             }
-
             .slide-in-left {
                 animation: slideInFromLeft 1s ease-out forwards;
             }
@@ -81,12 +80,19 @@
         </style>
         
         <!-- JavaScript for Mobile Menu Toggle -->
-    <script defer>
-        function toggleMenu() {
-            document.getElementById('mobile-menu').classList.toggle('hidden');
-        }
-        document.getElementById('mobile-menu-toggle').addEventListener('click', toggleMenu);
-    </script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                function toggleMenu() {
+                    document.getElementById('mobile-menu').classList.toggle('hidden');
+                }
+                // Ensure the button exists before adding the event listener
+                const toggleButton = document.getElementById('mobile-menu-toggle');
+                if (toggleButton) {
+                    toggleButton.addEventListener('click', toggleMenu);
+                }
+            });
+        </script>
+        
 
     </head>
     
